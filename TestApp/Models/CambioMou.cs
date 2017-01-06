@@ -8,5 +8,6 @@ namespace TestApp.Models
     public class CambioMou
     {
         int bitbucket;
+        int helloworl;
     }
 }
