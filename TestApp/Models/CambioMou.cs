@@ -11,5 +11,6 @@ namespace TestApp.Models
         //mai!!
         //eres un loquillo
         string mai;
+        int helloworl;
     }
 }
