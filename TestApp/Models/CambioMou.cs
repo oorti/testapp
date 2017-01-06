@@ -9,5 +9,6 @@ namespace TestApp.Models
     {
         int bitbucket;
         int helloworl;
+        string nombre;
     }
 }
