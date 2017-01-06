@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Entities.DatosPersonales>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create") |
+    <a href="~/DatosContactos/Index/">
+        Datos de Contacto
+    </a>
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoPaterno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoMaterno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Activo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApellidoPaterno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApellidoMaterno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Activo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar Datos Personales", "Edit", new { id=item.Id }) |
+            
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }) |
+
+            @*@Html.ActionLink("Agregar Datos de Contacto", "Create","DatosContactos", new { id = item.Id })*@
+            <a href="~/DatosContactos/Create/@item.Id" >
+                Datos de Contacto
+            </a>
+
+        </td>
+        @*<td>
+            <a href="~/DatosContactos/Create/@item.Id" class="btn btn-primary" >
+                <i class="fa fa-credit-card-alt" aria-hidden="true" title="Datos Contacto">Datos de Contacto</i>
+            </a>
+        </td>*@
+    </tr>
+}
+
+</table>
