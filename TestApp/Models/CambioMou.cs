@@ -10,5 +10,6 @@ namespace TestApp.Models
         int bitbucket;
         //mai!!
         //eres un loquillo
+        string mai;
     }
 }
